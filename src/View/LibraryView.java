@@ -5,6 +5,7 @@
 package View;
 
 import Controller.BookController;
+import Controller.StudentController;
 import java.util.Scanner;
 
 public class LibraryView {
@@ -37,7 +38,9 @@ public class LibraryView {
                         bookView.runBookView();
                         break;
                     case 2:
-                        // nothing yet
+                        StudentController studentController = new StudentController();
+                        StudentView studentView = new StudentView(studentController);
+                        studentView.runStudentView();
                         break;
                     case 3:
                         // nothing yet
