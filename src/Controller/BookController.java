@@ -55,13 +55,25 @@ public class BookController {
         mergeSort(books, (b1, b2) -> b1.getTitle().compareToIgnoreCase(b2.getTitle()));
     }
 
+    // search for books with a given author name
+    public List<Book> searchBooksByAuthorName(String authorName) {
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) { // iterate through book list
+            String fullName = book.getAuthorFirstName() + " " + book.getAuthorSurname();  // combine the author's 1st name and surname
+            if (fullName.equalsIgnoreCase(authorName)) { // compare input to author's full name (case-insensitive)
+                result.add(book);// add book to the "result" list
+            }
+        }
+        return result; // return list of matching books to author's full name
+    }
+    
     // search for books with a given book title
     public List<Book> searchBooksByTitle(String title) {
         List<Book> result = new ArrayList<>(); 
         for (Book book : books) { // iterate through book list
             // Check if the title of the book matches the given title (case-insensitive)
             if (book.getTitle().equalsIgnoreCase(title)) { // compare input to titles (case-insensitive)
-                result.add(book);// add the book to the "result" list
+                result.add(book);// add book to the "result" list
             }
         }
         return result; // return list of matching books to title

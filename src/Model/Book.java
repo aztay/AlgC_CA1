@@ -6,13 +6,14 @@ package Model;
 
 
 public class Book {
+    // Declare private fields to store book information
     private String bookID;
     private String authorFirstName;
     private String authorSurname;
     private String title;
     private String genre;
    
-    
+    // CONSTRUCTOR
     public Book(String bookID, String authorFirstName, String authorSurname, String title, String genre) {
         this.bookID = bookID;
         this.authorFirstName = authorFirstName;
@@ -21,7 +22,7 @@ public class Book {
         this.genre = genre;
     }
 
-    // Getters and setters
+    // GETTERS AND SETTERS
     public String getBookID() {
         return bookID;
     }
